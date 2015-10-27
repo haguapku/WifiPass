@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:ignore ="MergeRootFrame">
+
+    <include
+        android:id="@+id/main_top_bar"
+        layout="@layout/main_top_bar"
+        />
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/maintab"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="@color/gray_f9f9f9"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/main_tab_wifi"
+            style="@style/main_tab_bottom"
+            android:drawableTop="@drawable/tab_wifi_selector"
+            android:text="@string/wifi_main_wifi_tab"/>
+
+        <View
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:id="@+id/line"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray_ebebeb"/>
+
+        <RadioButton
+            android:id="@+id/main_tab_news"
+            style="@style/main_tab_bottom"
+            android:drawableTop="@drawable/tab_map_selector"
+            android:text="@string/wifi_main_news_tab"/>
+        
+    </RadioGroup>
+
+</LinearLayout>

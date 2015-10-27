@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:background="#ffffff">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#21454545" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/menu_wifi"
+        android:gravity="center_vertical"
+        android:background="@drawable/popup_window_item_selector">
+
+        <com.haguapku.wificlient.view.DmSwitchBox
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/wifi_switch"
+            android:layout_marginLeft="6.6dp"
+            android:layout_marginRight="6.6dp"
+            android:layout_weight="1">
+        </com.haguapku.wificlient.view.DmSwitchBox>
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:text=" WiFi"
+            android:textSize="15sp"
+            android:textColor="#454545"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#21454545" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/menu_setting"
+        android:background="@drawable/popup_window_item_selector">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginRight="6.6dp"
+            android:src="@drawable/more_menu_setting_selector"/>
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="@string/more_menu_item_setting"
+                android:textSize="15sp"
+                android:textColor="#454545"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/wifi_common_budge"
+                android:layout_alignParentRight="true"
+                android:id="@+id/tips"
+                android:layout_gravity="top|right"
+                android:layout_marginRight="13dp"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#21454545" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/menu_exit"
+        android:background="@drawable/popup_window_item_selector">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginRight="6.6dp"
+            android:src="@drawable/more_menu_exit_selector"/>
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="@string/more_menu_item_exit"
+            android:textSize="15sp"
+            android:textColor="#454545"/>
+
+    </LinearLayout>
+
+</LinearLayout>

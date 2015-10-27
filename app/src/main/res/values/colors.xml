@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="gray_f9f9f9">#fff9f9f9</color>
+    <color name="gray_ebebeb">#ffebebeb</color>
+    <color name="gray_e5e5e5">#ffe5e5e5</color>
+    <color name="gray_707070">#ff707070</color>
+    <color name="gray_999999">#ff999999</color>
+    <color name="white">#ffffffff</color>
+    <color name="half_transparent">#99000000</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="tab_textcolor_press">#14c2c8</color>
+    <color name="tab_textcolor_normal">#a7a9b9</color>
+
+
+    <color name="menu_item_selected">#5febebeb</color>
+
+    <color name="main_topbar_bg">#14c2c8</color>
+
+</resources>

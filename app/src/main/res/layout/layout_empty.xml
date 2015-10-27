@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/lay_empty"
+    android:background="@color/white"
+    android:clickable="true">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/anim_open_wifi"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:src="@drawable/wifi_process0" />
+
+        <CheckedTextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/checked_text_wifi"
+            android:clickable="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:drawablePadding="20dp"
+            android:gravity="center"
+            android:text="@string/wifi_switch_text"
+            android:textColor="#8e8e8e"
+            android:textSize="14sp"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:id="@+id/btn_wifi_switch"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/button_blue_selector"
+            android:gravity="center"
+            android:text="@string/wifi_switch_action"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+</FrameLayout>

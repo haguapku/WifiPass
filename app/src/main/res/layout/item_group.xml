@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools = "http://schemas.android.com/tools"
+    android:id="@+id/layout_title"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="36dp"
+    tools:ignore="ContentDescription,UseCompoundDrawables" >
+
+    <View
+        android:id="@+id/holder"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="@color/transparent"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:background="#f9f9f9">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="5.0dip"
+            android:layout_marginRight="2.0dip"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="5dp"
+            android:singleLine="true"
+            android:textColor="@color/tab_textcolor_press"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_ebebeb" />
+
+</LinearLayout>

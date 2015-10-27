@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lay_guide1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/half_transparent"
+    android:clickable="true"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/new_guide_marginTop"
+        android:src="@drawable/wifi_guide1" />
+
+</LinearLayout>
