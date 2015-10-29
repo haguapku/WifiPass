@@ -19,7 +19,7 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.haguapku.wificlient.activity.R;
+import com.haguapku.wificlient.R;
 
 
 public class ProducerUtils {

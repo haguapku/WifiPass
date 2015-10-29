@@ -23,6 +23,8 @@ import com.haguapku.wificlient.util.WifiAdmin;
 import com.haguapku.wificlient.util.WiFiUtil;
 import com.haguapku.wificlient.view.DmSwitchBox;
 
+import com.haguapku.wificlient.R;
+
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener,
         RadioGroup.OnCheckedChangeListener,CompoundButton.OnCheckedChangeListener{

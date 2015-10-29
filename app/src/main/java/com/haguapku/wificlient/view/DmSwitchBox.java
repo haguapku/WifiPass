@@ -13,7 +13,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CheckBox;
 
-import com.haguapku.wificlient.activity.R;
+import com.haguapku.wificlient.R;
 
 /**
  * Created by MarkYoung on 15/9/17.

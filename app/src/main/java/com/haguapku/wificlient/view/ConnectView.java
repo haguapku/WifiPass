@@ -28,7 +28,7 @@ import android.widget.PopupWindow;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.haguapku.wificlient.activity.R;
+import com.haguapku.wificlient.R;
 import com.haguapku.wificlient.bean.AccessPoint;
 import com.haguapku.wificlient.bean.DmWifiInfo;
 import com.haguapku.wificlient.producer.ItemBase;

@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.haguapku.wificlient.activity.R;
+import com.haguapku.wificlient.R;
 
 /**
  * Created by MarkYoung on 15/10/13.

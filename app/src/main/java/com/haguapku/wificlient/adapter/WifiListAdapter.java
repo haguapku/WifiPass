@@ -10,7 +10,7 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.haguapku.wificlient.activity.R;
+import com.haguapku.wificlient.R;
 import com.haguapku.wificlient.bean.AccessPoint;
 import com.haguapku.wificlient.util.WiFiUtil;
 import com.haguapku.wificlient.view.WifiSignalView;
