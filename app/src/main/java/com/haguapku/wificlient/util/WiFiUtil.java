@@ -153,4 +153,13 @@ public class WiFiUtil {
                 networkInfo.getType() == ConnectivityManager.TYPE_WIFI);
     }
 
+    public static String normalizeBSSID(String bssid) {
+        if (bssid != null) {
+            return bssid.replaceAll("\"", "");
+        }
+        return null;
+    }
+
+
+
 }
