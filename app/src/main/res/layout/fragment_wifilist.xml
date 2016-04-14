@@ -57,7 +57,7 @@
             <Button
                 android:layout_width="70dp"
                 android:layout_height="40dp"
-                android:id="@+id/btn_getwifi_cancle"
+                android:id="@+id/btn_getwifi_cancel"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/wifi_common_white_alpha"
                 android:text="@string/dialog_action_cancel"
@@ -88,7 +88,8 @@
 
     </com.haguapku.wificlient.widget.XExpandableListView>
 
-    <include layout="@layout/layout_empty"></include>
+    <include layout="@layout/layout_empty"
+        android:visibility = "gone"/>
 
     <include
         layout="@layout/layout_guide1"

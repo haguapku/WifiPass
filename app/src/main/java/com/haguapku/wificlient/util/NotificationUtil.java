@@ -6,7 +6,6 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
 import com.haguapku.wificlient.R;
@@ -68,13 +67,13 @@ public class NotificationUtil {
         String subtitle = "";
         switch (resultCode){
             case WiFiHttp.NETWORK_CONNECTED:
-                subtitle = context.getString(R.string.wifi_sate_connected);
+                subtitle = context.getString(R.string.wifi_state_connected);
                 break;
             case WiFiHttp.NETWORK_NEEDLOGIN:
                 subtitle = context.getString(R.string.wifi_desc_needlogin);
                 break;
             case WiFiHttp.NETWORK_TIMEOUT:
-                subtitle = context.getString(R.string.wifi_sate_timeout);
+                subtitle = context.getString(R.string.wifi_state_timeout);
                 break;
             case WiFiHttp.NETWORK_UNUSED:
                 subtitle = context.getString(R.string.wifi_desc_work_unused);

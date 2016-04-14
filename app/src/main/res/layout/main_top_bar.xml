@@ -14,11 +14,13 @@
         android:scaleType="fitCenter"
         android:src="@drawable/wifi_icon_white"/>
 
-    <ImageView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="-9dp"
-        android:src="@drawable/wifi_common_title"/>
+        android:text="Wifi Free"
+        android:textSize="20sp"
+        android:textColor="@color/white"/>
 
     <View
         android:layout_width="0dp"

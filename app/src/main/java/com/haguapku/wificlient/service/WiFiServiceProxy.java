@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.util.Log;
 
 import com.haguapku.wificlient.util.Constants;
 import com.haguapku.wificlient.util.WiFiHttp;
@@ -34,7 +35,10 @@ public class WiFiServiceProxy {
         try{
             if(!isBind){
                 this.context = context;
-                context.bindService(new Intent(Constants.WIFI_SERVICE),conn, Service.BIND_AUTO_CREATE);
+                Intent intent = new Intent(context,WifiService.class);
+                intent.setAction(Constants.WIFI_SERVICE);
+
+                context.bindService(intent,conn,Service.BIND_AUTO_CREATE);
             }
         }catch (SecurityException e){
             e.printStackTrace();
@@ -53,6 +57,9 @@ public class WiFiServiceProxy {
     private ServiceConnection conn = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
+
+//            Log.v("----hagua----","onServiceConnected");
+
             mService = IWiFiService.Stub.asInterface(service);
             isBind = true;
         }
@@ -64,7 +71,13 @@ public class WiFiServiceProxy {
         }
     };
 
+    public boolean isBind() {
+        return isBind;
+    }
+
     public int getNetworkState(){
+
+        Log.v("----hagua----","isBind = "+isBind);
 
         if(isBind){
 

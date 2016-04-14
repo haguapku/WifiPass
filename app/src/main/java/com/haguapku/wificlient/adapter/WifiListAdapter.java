@@ -34,7 +34,7 @@ public class WifiListAdapter extends BaseExpandableListAdapter implements View.O
     private static int[] types = {R.string.wifi_type_free,R.string.wifi_type_key};
     private static int[] icons = {R.drawable.wifi_common_unlock,R.drawable.wifi_common_lock};
 
-    public WifiListAdapter(Map<String, List<AccessPoint>> datas, Context context) {
+    public WifiListAdapter(Context context,Map<String, List<AccessPoint>> datas) {
         super();
         this.datas = datas;
         this.context = context;
@@ -48,7 +48,19 @@ public class WifiListAdapter extends BaseExpandableListAdapter implements View.O
         }
     }
 
-    private List<AccessPoint> getKeyDatas(){
+    public void removeAp(AccessPoint ap) {
+        if (ap != null) {
+            for (String key : keys) {
+                List<AccessPoint> aps = datas.get(key);
+                if (ap.isLock() && aps != null && aps.contains(ap)) {
+                    // aps.remove(ap);
+                }
+            }
+            notifyDataSetChanged();
+        }
+    }
+
+    public List<AccessPoint> getKeyDatas(){
         if(datas == null)
             return null;
         return datas.get("key");
@@ -105,7 +117,8 @@ public class WifiListAdapter extends BaseExpandableListAdapter implements View.O
     }
 
     @Override
-    public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
+    public View getChildView(int groupPosition, int childPosition,
+                             boolean isLastChild, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if(convertView == null){
             convertView = View.inflate(context,R.layout.item_ssid,null);
@@ -169,7 +182,7 @@ public class WifiListAdapter extends BaseExpandableListAdapter implements View.O
 
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) {
-        return false;
+        return true;
     }
 
     @Override

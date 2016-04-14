@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,17 +18,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.haguapku.wificlient.WifiClientLib;
+import com.haguapku.wificlient.fragment.NewsCenterFragment;
+import com.haguapku.wificlient.fragment.WiFiListFragment;
 import com.haguapku.wificlient.util.DmPreferenceManager;
 
 import com.haguapku.wificlient.util.WifiAdmin;
 import com.haguapku.wificlient.util.WiFiUtil;
+import com.haguapku.wificlient.view.ConnectView;
 import com.haguapku.wificlient.view.DmSwitchBox;
 
 import com.haguapku.wificlient.R;
 
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener,
-        RadioGroup.OnCheckedChangeListener,CompoundButton.OnCheckedChangeListener{
+        RadioGroup.OnCheckedChangeListener,CompoundButton.OnCheckedChangeListener,
+        ConnectView.NotifyConnected{
 
     private ImageView mMapBtn;
     private ImageView mScanBtn;
@@ -38,11 +43,11 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private PopupWindow mMenuPopup;
     private TextView mTitle;
 
-    private TabInfo[] mTabInfo = {
-//            new TabInfo(R.id.main_tab_wifi,WifiListFragment.class),
-//            new TabInfo(R.id.main_tab_news,NewsCenterFragment.class)
-            new TabInfo(R.id.main_tab_wifi,null),
-            new TabInfo(R.id.main_tab_news,null)
+    private TabInfo[] mTabInfo = new TabInfo[]{
+            new TabInfo(R.id.main_tab_wifi, WiFiListFragment.class),
+            new TabInfo(R.id.main_tab_news, NewsCenterFragment.class)
+//            new TabInfo(R.id.main_tab_wifi,null),
+//            new TabInfo(R.id.main_tab_news,null)
     };
     private int lastTabIndex = 0;
     private Fragment[] fragments = new Fragment[mTabInfo.length];
@@ -55,6 +60,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_startup);
 
@@ -220,7 +226,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         }
 
         if(tabIndex != -1 && fragments[tabIndex] != null){
-            ft.hide(fragments[index]);
+            ft.hide(fragments[tabIndex]);
         }
 
         tabIndex = index;
@@ -238,6 +244,12 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         else{
             wifiAdmin.closeWifi();
         }
+    }
+
+    @Override
+    public void onConnected(int descId) {
+        Toast.makeText(this, "已连接", Toast.LENGTH_SHORT).show();
+//        mMainTabView.check(R.id.main_tab_news);
     }
 
     public static class TabInfo{

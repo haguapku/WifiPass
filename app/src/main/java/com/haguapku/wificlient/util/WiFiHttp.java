@@ -1,5 +1,7 @@
 package com.haguapku.wificlient.util;
 
+import android.util.Log;
+
 import com.haguapku.wificlient.WifiClientLib;
 
 import java.io.BufferedReader;
@@ -26,11 +28,14 @@ public class WiFiHttp {
     private final static boolean DEBUG = WifiClientLib.DEBUG;
 
     public static int checkNetWork(String strURL) {
+
+
         int resultCode = NETWORK_UNCHECK;
         // No wifi network, don't run the task.
         if (!WiFiUtil.isWifiAvailable()) {
             return resultCode;
         }
+
         // Check from apple
         HttpURLConnection connection = null;
         InputStream is = null;
@@ -47,7 +52,9 @@ public class WiFiHttp {
                     "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)");
             is = connection.getInputStream();
             int responseCode = connection.getResponseCode();
+
             if (responseCode == HttpURLConnection.HTTP_OK) {
+
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(is));
                 String sCurrentLine = "";
                 String sTotalString = "";

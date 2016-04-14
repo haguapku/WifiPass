@@ -7,6 +7,9 @@
     <color name="gray_707070">#ff707070</color>
     <color name="gray_999999">#ff999999</color>
     <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="black_323232">#ff323232</color>
+
     <color name="half_transparent">#99000000</color>
     <color name="transparent">#00000000</color>
 

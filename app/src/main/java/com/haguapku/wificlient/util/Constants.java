@@ -5,6 +5,28 @@ package com.haguapku.wificlient.util;
  */
 public class Constants {
 
+    /**
+     * Handler Message action
+     */
+    public final static int MSG_ACTION_REFRESH_LIST=0;
+    public final static int MSG_ACTION_FILL_APS_LIST=11;
+    public final static int MSG_ACTION_HIDE_IMM=101;
+    public final static int MSG_ACTION_CONNECT_TIMEOUT=102;
+    public final static int MSG_ACTION_CURRENT_SPEED=66;
+    public final static int MSG_ACTION_GET_LOCATION_SHARE=67;
+    public final static int MSG_ACTION_CONNECT_DISAPPEAR=201;
+    public final static int MSG_ACTION_NEGATIVE_1=204;
+    public final static int MSG_ACTION_WIFI_CRACK=77;
+    public final static int MSG_ACTION_WIFI_LBS=78;
+    public final static int MSG_ACTION_WIFI_INFO_UPDATE=79;
+    public final static int MSG_ACTION_WIFI_DETAIL=80;
+    public final static int MSG_ACTION_WIFI_SHARE=81;
+    public final static int MSG_ACTION_WIFI_LOACTION_TIMEOUT=15;
+
+    public final static int MSG_ACTION_GUIDE_ACTION1=103;
+    public final static int MSG_ACTION_GUIDE_ACTION2=104;
+
+
     public static final String SUCCESS_RESULT = "<HEAD><TITLE>Success</TITLE></HEAD><BODY>Success</BODY>";
     public static final String CHECK_APPLE_URL = "http://www.apple.com/library/test/success.html";
     public static final String CHECK_URL = "http://210.73.213.237/success.html";

@@ -192,7 +192,7 @@ public class WifiAdmin {
         return mWifiManager;
     }
 
-    public List<WifiConfiguration> getWifiConfiguration(){
+    public List<WifiConfiguration> getConfiguration(){
         return mWifiManager.getConfiguredNetworks();
     }
 

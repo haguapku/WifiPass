@@ -1,6 +1,5 @@
 package com.haguapku.wificlient.service;
 
-import android.app.Notification;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Handler;
@@ -9,6 +8,7 @@ import android.os.IBinder;
 import android.os.Message;
 import android.os.RemoteException;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.haguapku.wificlient.WifiClientLib;
 import com.haguapku.wificlient.util.Constants;
@@ -45,6 +45,7 @@ public class WifiService extends Service implements WiFiConnectChanged{
 
     @Override
     public void onCreate() {
+//        Log.v("----hagua----", "Service onCreate");
         super.onCreate();
         mWiFiMonitor = WiFiMonitor.getInstance(this);
         mWiFiMonitor.registerListener(this);
@@ -66,6 +67,7 @@ public class WifiService extends Service implements WiFiConnectChanged{
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+//        Log.v("----hagua----", "Service onStartCommand");
         if(intent != null){
             String action = intent.getAction();
             if(Constants.CHECK_NETWORK_PORTAL.equals(action)){
@@ -179,6 +181,9 @@ public class WifiService extends Service implements WiFiConnectChanged{
                     if(WiFiHttp.isResultAccurate(result)){
                         checkSeq++;
                         mResultCode = result;
+
+                        Log.v("----hagua----","mResultCode2 = "+mResultCode);
+
                         mThreadHandler.removeMessages(CHECK_TIMEOUT);
                         sendMessage(NOTIFY,0,bssid,0);
                     }
@@ -219,7 +224,7 @@ public class WifiService extends Service implements WiFiConnectChanged{
     }
 
     @Override
-    public void onWifiConnected(String string) {
+    public void onWifiConnected(String bssid) {
         mResultCode = WiFiHttp.NETWORK_UNCHECK;
         mNeedShowNotify = true;
         sendMessage(CHECK_NETWORK,0,mWiFiMonitor.getBssid(),0);

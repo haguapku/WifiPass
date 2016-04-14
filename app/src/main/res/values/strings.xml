@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">WifiPass</string>
-    <string name="zapya_pc_ap">快牙PC热点</string>
+    <string name="zapya_pc_ap">PC热点</string>
 
     <string name="wifi_main_wifi_tab">身边</string>
     <string name="wifi_main_news_tab">热点资讯</string>
@@ -11,7 +11,17 @@
     <string name="wifi_switch_text">打开WiFi\n寻找身边免费WiFi</string>
     <string name="wifi_switch_action">打开WiFi</string>
     <string name="wifi_action_get">点击  获取WiFi钥匙</string>
+    <string name="wifi_pwd_wrong">(密码错误)</string>
+
+    <!-- ============================= -->
+
+    <string name="dialog_action_connect">连接</string>
     <string name="dialog_action_cancel">取消</string>
+    <string name="dialog_action_confirm">确定</string>
+    <string name="dialog_prompt_title">提示</string>
+
+    <!-- ============================= -->
+
     <string name="xlistview_header_hint_normal">下拉刷新</string>
     <string name="xlistview_header_hint_ready">释放刷新</string>
     <string name="xlistview_header_hint_loading">正在刷新列表</string>
@@ -21,14 +31,48 @@
     <string name="wifi_type_free">免费WiFi</string>
     <string name="wifi_type_key">需要密码</string>
     <string name="wifi_desc_needlogin">已连接，登录后可上网</string>
+    <string name="wifi_desc_work_timeout">已连接，网络较差</string>
+    <string name="wifi_desc_work_unused">无法上网</string>
+    <string name="wifi_desc_nopwd">无密码</string>
+    <string name="wifi_desc_saveed">已保存密码</string>
     <string name="wifi_free_empty">暂无免费WiFi，点击刷新</string>
+
     <string name="wifi_action_login">登&#160;&#160;录</string>
     <string name="wifi_action_share">告诉小伙伴</string>
     <string name="wifi_action_pass">近传WiFi</string>
-    <string name="wifi_sate_connecting">努力连接中...</string>
-    <string name="wifi_sate_checking">已连接，检查中...</string>
+
+    <string name="wifi_connect_fail">连接失败，可再次尝试</string>
+
+    <string name="share_notnet_msg">当前没有WiFi连接</string>
+
+    <!-- ============================= -->
+    <string name="wifi_state_connecting">努力连接中...</string>
+    <string name="wifi_state_checking">已连接，检查中...</string>
+    <string name="wifi_state_connected">已连接，网络通畅</string>
+    <string name="wifi_state_timeout">连接超时</string>
+    <string name="wifi_rssi_timeout">信号较弱，连接失败</string>
+    <string name="wifi_state_authenticating">验证中...</string>
+    <string name="wifi_state_obtaining_ipaddr">获取IP地址中...</string>
+    <string name="wifi_state_connected0">已连接，网络通畅</string>
+    <string name="wifi_state_disconnecting">断开中...</string>
+    <string name="wifi_state_disconnected">尝试连接中...</string>
+    <string name="wifi_state_failed">连接失败</string>
+    <string name="wifi_state_idle">努力连接中...</string>
+
+    <!-- ============================= -->
+    <string name="add_network">手动添加网络</string>
+
     <string name="nearby_edit_prompt">继续完善WiFi信息，方便他人快速发现连网</string>
+    <string name="wifi_refresh_try_no_keys">附近没有发现WiFi钥匙，换个地方试试吧</string>
+    <string name="wifi_refresh_try_has_keys">点击获取WiFi钥匙或换个地方再试</string>
+    <string name="wifi_connect_weak_signal_prompt">这个WiFi的信号较弱，可能连不上，确定继续连接吗？</string>
+    <string name="wifi_crack_wrong_pwd_prompt">主人更新了密码，无法连接了~如果知道密码，请输入密码连接</string>
+
+    <string name="wifi_notify_title">免费WiFi已为你连上</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

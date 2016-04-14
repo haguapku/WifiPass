@@ -9,6 +9,7 @@ import android.net.NetworkInfo;
 import android.net.wifi.SupplicantState;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.util.Log;
 
 import com.haguapku.wificlient.util.WiFiUtil;
 
@@ -46,6 +47,9 @@ public class WiFiMonitor extends BroadcastReceiver {
     }
 
     public final boolean init(){
+
+        Log.v("----hagua----","WiFiMonitor init");
+
         IntentFilter filter = new IntentFilter();
         filter.addAction(WifiManager.NETWORK_STATE_CHANGED_ACTION);
         filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
@@ -55,6 +59,9 @@ public class WiFiMonitor extends BroadcastReceiver {
         if(mConnectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnected()){
             WifiInfo localWifiInfo = mWifiManager.getConnectionInfo();
             if(SupplicantState.COMPLETED == localWifiInfo.getSupplicantState()){
+
+                Log.v("----hagua----","Wifi already connected");
+
                 isConnected = true;
                 bssid = WiFiUtil.normalizeBSSID(localWifiInfo.getBSSID());
                 ssid = WiFiUtil.normalizeBSSID(localWifiInfo.getSSID());
@@ -105,10 +112,11 @@ public class WiFiMonitor extends BroadcastReceiver {
                 return;
             }
             if(SupplicantState.COMPLETED == wifiInfo.getSupplicantState()){
+
                 if(mNetworkId == wifiInfo.getNetworkId() || mWifiManager.getConfiguredNetworks() == null){
                     return;
                 }
-                synchronized (lock){
+                synchronized (this.lock){
                     isConnected = true;
                     bssid = WiFiUtil.normalizeBSSID(wifiInfo.getBSSID());
                     ssid = WiFiUtil.normalizeBSSID(wifiInfo.getSSID());

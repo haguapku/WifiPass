@@ -5,6 +5,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -28,6 +30,7 @@ public class ProducerUtils {
 	private static List<BlackItem> blackList = new ArrayList<BlackItem>();
 	private static final String DEFAULT_FILTER_RULE = "[{\"type\":0,\"rules\":[\"^hawk$\"]},{\"type\":1,\"rules\":[\"^cmcc$|^cmcc-auto$|^chinanet$|^chinaunicom$|^cuawifi$\"]}]";
 
+	private static List<FilterItem> filterList = new ArrayList<FilterItem>();
 	
 	public static void init(Context context) {
 		
@@ -79,7 +82,7 @@ public class ProducerUtils {
 	}
 	
 	public static ItemBase find(String mac, String SSID) {
-		
+
 		if (mac != null && mac.length() > 6) {
 			mac = mac.replace(":", "").toUpperCase().substring(0, 6);
 		}
@@ -103,8 +106,23 @@ public class ProducerUtils {
 		}
 		return null;
 	}
-	
 
+	@SuppressLint("DefaultLocale")
+	public static int filter(String SSID) {
+		if (SSID != null) {
+			SSID = SSID.replace("\"", "").toLowerCase();
+		}
+		try {
+			for (FilterItem filter : filterList) {
+				if (filter.isMatched(SSID)) {
+					return filter.type;
+				}
+			}
+		} catch (ConcurrentModificationException e) {
+			e.printStackTrace();
+		}
+		return FilterItem.TYPE_UNKNOW;
+	}
 
 	public static int getWiFiIcon(int id) {
 		switch (id) {

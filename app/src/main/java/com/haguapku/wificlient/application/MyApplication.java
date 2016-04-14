@@ -1,6 +1,7 @@
 package com.haguapku.wificlient.application;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.haguapku.wificlient.WifiClientLib;
 
@@ -11,6 +12,7 @@ public class MyApplication extends Application {
 
     @Override
     public void onCreate() {
+//        Log.v("----hagua----","Applicaiton onCreate");
         super.onCreate();
         WifiClientLib.initialize(getApplicationContext());
     }

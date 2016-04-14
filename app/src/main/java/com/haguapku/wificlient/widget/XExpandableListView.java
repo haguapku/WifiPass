@@ -36,7 +36,7 @@ public class XExpandableListView extends ExpandableListView implements AbsListVi
     private TextView mHeaderTimeView;
     private int mHeaderViewHeight; // header view's height
     private boolean mEnablePullRefresh = true;
-    private boolean mPullRefreshing = false; // is refreashing.
+    private boolean mPullRefreshing = false; // is refreshing.
 
     // -- footer view
     private XListViewFooter mFooterView;
@@ -61,14 +61,17 @@ public class XExpandableListView extends ExpandableListView implements AbsListVi
 
     public XExpandableListView(Context context) {
         super(context);
+        initWithContext(context);
     }
 
     public XExpandableListView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        initWithContext(context);
     }
 
     public XExpandableListView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        initWithContext(context);
     }
 
     private  void initWithContext(Context context){

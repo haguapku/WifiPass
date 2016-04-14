@@ -2,6 +2,7 @@ package com.haguapku.wificlient.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.preference.PreferenceManager;
 
 import com.haguapku.wificlient.WifiClientLib;
@@ -16,6 +17,8 @@ public class DmPreferenceManager {
 
     public static final String DISPLAY_SCAN_RED_POINT = "display_scan_red_point";
     public static final String DISPLAY_PASS_CODE_ANIM = "display_pass_code_anim";
+
+    public static final String DISPLAY_NEW_GUIDE_PAGE = "display_new_guide_page";
 
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
@@ -39,8 +42,25 @@ public class DmPreferenceManager {
         editor = preferences.edit();
     }
 
+    public static void savePreference(final SharedPreferences.Editor editor) {
+        try{
+            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.FROYO) {
+                editor.apply();
+            } else {
+                editor.commit();
+            }
+        }catch(OutOfMemoryError e){
+            e.printStackTrace();
+        }
+    }
+
+    public void setBoolean(String key, boolean value) {
+        editor.putBoolean(key, value);
+        savePreference(editor);
+    }
+
     public boolean getBoolean(String key, Boolean defValue){
-        return preferences.getBoolean(key,defValue);
+        return preferences.getBoolean(key, defValue);
     }
 
     public boolean getFeedNew(){
@@ -53,5 +73,13 @@ public class DmPreferenceManager {
 
     public boolean getDisplayPassCodeAnim() {
         return getBoolean(DISPLAY_PASS_CODE_ANIM,true);
+    }
+
+    public boolean getDisplayNewGuidePage() {
+        return getBoolean(DISPLAY_NEW_GUIDE_PAGE, true);
+    }
+
+    public void setDisplayNewGuidePage(boolean value) {
+        setBoolean(DISPLAY_NEW_GUIDE_PAGE, value);
     }
 }
